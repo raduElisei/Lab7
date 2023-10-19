@@ -15,7 +15,7 @@ internal class Program
 
         Person p1 = new("Joe", "Johnson", DateTimeOffset.Now.AddYears(-30), new Address());
 
-        p1.PrintPersonProperties();
+        PersonConsolePrinter.Print(p1);
 
         Address a1 = new()
         {
@@ -27,8 +27,8 @@ internal class Program
 
         Person p2 = new("Angela", "White", DateTimeOffset.Now.AddYears(-34), a1);
 
-        p2.PrintPersonProperties();
-        System.Console.WriteLine();
+        PersonConsolePrinter.Print(p2);
+        Console.WriteLine();
 
         #endregion
 

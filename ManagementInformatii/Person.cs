@@ -1,4 +1,6 @@
-﻿namespace Lab7.ManagementInformatii;
+﻿using Microsoft.VisualBasic;
+
+namespace Lab7.ManagementInformatii;
 
 public class Person
 {
@@ -7,7 +9,6 @@ public class Person
         FirstName = string.Empty;
         LastName = string.Empty;
         DateOfBirth = DateTimeOffset.MinValue;
-        Age = DateTimeOffset.UtcNow.Year - DateOfBirth.Year;
         Address = new();
     }
 
@@ -16,20 +17,18 @@ public class Person
         FirstName = firstName ?? string.Empty;
         LastName = lastName ?? string.Empty;
         DateOfBirth = dateOfBirth ?? DateTime.MinValue;
-        Age = DateTimeOffset.UtcNow.Year - DateOfBirth.Year;
         Address = address ?? new();
     }
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public DateTimeOffset DateOfBirth { get; set; }
-    public int Age { get; set; }
-    public Address Address { get; set; }
-
-    public void PrintPersonProperties()
+    public string FirstName { get; }
+    public string LastName { get; }
+    public DateTimeOffset DateOfBirth { get; }
+    public long Age
     {
-        Console.WriteLine($"This person's name is {FirstName} {LastName}.");
-        Console.WriteLine($"He/she was born at {DateOfBirth.ToString("D")} and currently is {Age} years-old.");
-        Console.WriteLine($"His/her address is {Address.Country}, {Address.County}, {Address.City}, {Address.Street} {Address.StreetNumber}.");
+        get
+        {
+            return DateTimeCalculator.YearsDifference(DateTime.Today, DateOfBirth.Date);
+        }
     }
+    public Address Address { get; private set; }
 }
