@@ -1,4 +1,4 @@
-namespace Lab7;
+namespace Lab7.CalculeGeometrice;
 
 public class Point
 {

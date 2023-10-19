@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Lab7;
+namespace Lab7.CalculeGeometrice;
 
 public class Triangle
 {
@@ -13,7 +13,7 @@ public class Triangle
         Vertex2 = new Point(x2, y2);
         Vertex3 = new Point(x3, y3);
     }
-    
+
     public Point Vertex1 { get; set; }
     public Point Vertex2 { get; set; }
     public Point Vertex3 { get; set; }

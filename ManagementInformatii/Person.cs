@@ -1,4 +1,4 @@
-﻿namespace Lab7;
+﻿namespace Lab7.ManagementInformatii;
 
 public class Person
 {
@@ -11,7 +11,7 @@ public class Person
         Address = new();
     }
 
-    public Person(string? firstName, string? lastName, DateTimeOffset? dateOfBirth, Address? address)
+    public Person(string firstName, string lastName, DateTimeOffset? dateOfBirth, Address address)
     {
         FirstName = firstName ?? string.Empty;
         LastName = lastName ?? string.Empty;
