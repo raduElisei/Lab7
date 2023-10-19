@@ -91,18 +91,14 @@ internal class Program
 
         #region ConturiBancare
 
-        Account radu = new Account()
+        Account radu = new Account("Radu", "213123123")
         {
-            Name = "Radu",
-            AccountNumber = 1,
             CurrentValue = 3560,
             TransactionList = new()
         };
 
-        Account george = new Account()
+        Account george = new Account("George", "3242f2243r2")
         {
-            Name = "George",
-            AccountNumber = 2,
             CurrentValue = 3254243,
             TransactionList = new()
         };
