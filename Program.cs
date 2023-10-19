@@ -1,4 +1,5 @@
 ﻿using Lab7.CalculeGeometrice;
+using Lab7.CampionatPingPong;
 using Lab7.ConturiBancare;
 using Lab7.Facturare;
 using Lab7.ManagementInformatii;
@@ -110,6 +111,12 @@ internal class Program
 
         radu.TransactionList.Add(t1);
         radu.BankStatement(100);
+
+        #endregion
+
+        #region Campionat ping-pong
+
+        Player.GenerateContest(3);
 
         #endregion
     }
