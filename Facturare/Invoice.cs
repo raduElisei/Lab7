@@ -73,7 +73,13 @@ public class Invoice
             Console.WriteLine("There are no products/services to print");
         }
 
-        string tableHead = String.Format("|{0,5}|{1,5}|{2,5}|{3,5}|", "No.", "Name", "Price Without VAT", "Price With VAT");
+        Console.WriteLine("Invoice");
+        Console.WriteLine($"Series {Series}");
+        Console.WriteLine($"Number {Number}");
+        Console.WriteLine($"Buyer {Buyer}");
+        Console.WriteLine($"Supplier {Supplier}");
+        Console.WriteLine();
+        string tableHead = String.Format("|{0,5}|{1,5}|{2,30}|{3,30}|", "No.", "Name", "Price Without VAT", "Price With VAT");
         Console.WriteLine(tableHead);
 
         int currentItem = 0;
@@ -86,11 +92,12 @@ public class Invoice
             noVatTotal += p.PriceWithoutVAT;
             total += p.PriceTotal;
 
-            string tableRow = String.Format("|{0,5}|{1,5}|{2,5}|{3,5}|", currentItem, p.ProductName, p.PriceWithoutVAT, p.PriceWithVAT);
+            string tableRow = String.Format("|{0,5}|{1,5}|{2,30}|{3,30}|", currentItem, p.ProductName, p.PriceWithoutVAT, p.PriceWithVAT);
             Console.WriteLine(tableRow);
         }
 
         Console.WriteLine($"Total without VAT is {noVatTotal}.");
         Console.WriteLine($"Total with VAT is {total}.");
+        Console.WriteLine();
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Lab7.CalculeGeometrice;
+using Lab7.ConturiBancare;
 using Lab7.Facturare;
 using Lab7.ManagementInformatii;
+using System.Transactions;
 
 namespace Lab7;
 
@@ -83,6 +85,31 @@ internal class Program
         Invoice invoice = new(emag, olx, products);
 
         invoice.PrintInvoice();
+
+        #endregion
+
+        #region ConturiBancare
+
+        Account radu = new Account()
+        {
+            Name = "Radu",
+            AccountNumber = 1,
+            CurrentValue = 3560,
+            TransactionList = new()
+        };
+
+        Account george = new Account()
+        {
+            Name = "George",
+            AccountNumber = 2,
+            CurrentValue = 3254243,
+            TransactionList = new()
+        };
+
+        ConturiBancare.Transaction t1 = new(3, true, george, 300000, 3254243, 2954243);
+
+        radu.TransactionList.Add(t1);
+        radu.BankStatement(100);
 
         #endregion
     }
